@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   esourcing.products:
-    image: ${DOCKER_REGISTRY-}esourcingproducts
+    image: ${DOCKER_REGISTRY-}esourcingproduct
     build:
       context: .
-      dockerfile: src/Services/Products/ESourcing.Products/Dockerfile
+      dockerfile: src/Services/Products/ESourcing.Product/Dockerfile
+
+  esourcing.sourcing:
+    image: ${DOCKER_REGISTRY-}esourcingsourcing
+    build:
+      context: .
+      dockerfile: src/Services/Sourcings/ESourcing.Sourcing/Dockerfile
+

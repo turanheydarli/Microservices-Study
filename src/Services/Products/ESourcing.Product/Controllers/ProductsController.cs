@@ -7,7 +7,7 @@ namespace ESourcing.Products.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class ProductsController : Controller
+    public class ProductsController : ControllerBase
     {
         #region Fields
         private readonly IProductRepository _productRepository;
