@@ -2,6 +2,7 @@
 using ESourcing.Sourcing.Data.Interfaces;
 using ESourcing.Sourcing.Repositories;
 using ESourcing.Sourcing.Repositories.Interfaces;
+using ESourcing.Sourcings.Entities;
 using ESourcing.Sourcings.Settings;
 using ESourcing.Sourcings.Settings.Interfaces;
 using Microsoft.Extensions.Options;
@@ -17,7 +18,8 @@ namespace ESourcing.Sourcings.System
                 (sp => sp.GetRequiredService<IOptions<SourcingDatabaseSettings>>().Value);
 
             services.AddTransient<ISourcingContext, SourcingContext>();
-            services.AddScoped<IAuctionRepository, AuctionRepository>();
+            services.AddScoped<IRepository<Auction>, Repository<Auction>>();
+            services.AddScoped<IBidRepository, BidRepository>();
 
             return services;
         }

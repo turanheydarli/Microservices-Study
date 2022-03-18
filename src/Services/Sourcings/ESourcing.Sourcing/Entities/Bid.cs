@@ -1,9 +1,10 @@
-﻿using MongoDB.Bson;
+﻿using ESourcing.Sourcing.Repositories;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ESourcing.Sourcings.Entities
 {
-    public class Bid
+    public class Bid : IEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
